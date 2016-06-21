@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="CTM"
+  id="myeclipse.1465978023809"
+  context-root="/CTM"
+  j2ee-spec="5.0"
+  archive="CTM.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
