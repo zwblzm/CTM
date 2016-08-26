@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.action.extension" value="do"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+
+
+	<package name="update" extends="struts-default" namespace="/">
+
+		
+		
+		<action name="fileManager_*" class="uploadFile" method="{1}">
+			<result name="input">/WEB-INF/jsps/case/excelToXML.jsp</result>
+			
+			<result name="uploadSuccess" type="redirectAction">
+			
+				<param name="namespace">/</param>
+				<param name="actionName">fileManager_fileList</param>
+			</result>
+			<result name="success">/WEB-INF/jsps/case/excelToXML.jsp</result>
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">20000000</param>
+				<param name="fileUpload.allowedExtensions">.xls</param>
+			</interceptor-ref>
+			
+			
+			<result name="fileDownload" type="stream">
+				<param name="contentType">${contentType}</param>
+				<param name="contentDisposition">attachment;fileName=${fileName}</param>
+				
+			</result>
+		</action>
+
+
+	</package>
+
+</struts>
