@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class table="tbl_sys_department" name="cn.aurora.oa.vo.DepartmentModel">
+		<id name="id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" column="name" length="32"></property>
+		<property name="description" column="description" length="255"></property>
+		
+		<many-to-one name="parent" class="cn.aurora.oa.vo.DepartmentModel" column="parent_id">
+			
+		</many-to-one>
+		
+		<!-- 配置上级部门和下级部门的一对多关系 -->
+		<set name="childrens">
+			<key column="parent_id"></key>
+			<one-to-many class="cn.aurora.oa.vo.DepartmentModel"/>
+		</set>
+		
+	
+	</class>
+
+
+
+</hibernate-mapping>

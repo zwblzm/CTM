@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="role" extends="frame" namespace="/">
+		<action name="roleAction_*" class="roleAction" method="{1}">
+			<result name="roleList">/WEB-INF/jsps/System_Role/role_list.jsp</result>
+			<result name="roleSavePage">/WEB-INF/jsps/System_Role/role_saveUI.jsp</result>
+			<result name="roleUpdatePage">/WEB-INF/jsps/System_Role/role_saveUI.jsp</result>
+			<result name="roleSaveSuccess" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">roleAction_roleList.do</param>
+			</result>
+			<result name="roleDeleteSuccess" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">roleAction_roleList.do</param>
+			</result>
+			<result name="roleUpdateSuccess" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">roleAction_roleList.do</param>
+			</result>
+			<result name="privilegeUIPage">/WEB-INF/jsps/System_Role/setPrivilegeUI.jsp</result>
+		</action>
+	
+	
+	</package>
+</struts>

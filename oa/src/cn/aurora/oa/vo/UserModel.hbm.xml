@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class table="tbl_sys_user" name="cn.aurora.oa.vo.UserModel">
+		<id name="id">
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="realName" length="32"></property>
+		<property name="loginName" length="32"></property>
+		<property name="gender" length="1"></property>
+		<property name="telephone" length="24"></property>
+		<property name="email" length="64"></property>
+		<property name="remark" length="255"></property>
+		
+		<many-to-one name="department" class="cn.aurora.oa.vo.DepartmentModel" column="department_id"></many-to-one>
+	
+	
+		<set name="roles" table="tbl_sys_roleAndUser">
+			<key column="user_id"></key>
+			<many-to-many class="cn.aurora.oa.vo.RoleModel" column="role_id"></many-to-many>
+			
+		</set>
+	</class>
+
+</hibernate-mapping>

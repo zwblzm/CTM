@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>oa</short-name>
+ <uri>http://www.aurora.cn/oa</uri>
+ <tag>
+ 	<name>path</name>
+ 	<tag-class>cn.aurora.oa.utils.MyOATag</tag-class>
+ 	<body-content>empty</body-content>
+ </tag>
+ 
+ <function>
+ 	<name>path</name>
+ 	<function-class>cn.aurora.oa.utils.MyELTag</function-class>
+ 	<function-signature>java.lang.String getPath()</function-signature>
+ </function>
+ 
+</taglib>
